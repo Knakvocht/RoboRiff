@@ -23,3 +23,8 @@
 - Generated charts are drafts and should be playtested before distribution.
 - Users must have the necessary rights to process and distribute their audio,
   charts, and artwork.
+
+### Windows asset
+
+- `RoboRiff.exe` can be attached to the GitHub Release when built with
+  `build_release.ps1`.

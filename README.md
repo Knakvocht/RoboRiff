@@ -38,6 +38,18 @@ Run the development build:
 py -3.13 app.py
 ```
 
+## Build the Windows executable
+
+Install the development dependencies and run:
+
+```powershell
+py -3.13 -m pip install -r requirements-dev.txt
+powershell -ExecutionPolicy Bypass -File .\build_release.ps1
+```
+
+The executable is created at `dist/RoboRiff.exe`. Model weights are downloaded
+and cached on first use; they are not bundled into the executable.
+
 The Riley/GAPS model downloads its weights on first use and caches them
 locally. The first guitar analysis can take several minutes on CPU.
 
