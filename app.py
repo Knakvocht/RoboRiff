@@ -20,7 +20,7 @@ from pathlib import Path
 
 # Prevent Numba cache issues when librosa is bundled or loaded from site-packages.
 os.environ.setdefault("NUMBA_DISABLE_CACHING", "1")
-os.environ.setdefault("NUMBA_CACHE_DIR", str(Path(tempfile.gettempdir()) / "ChartForgeNumbaCache"))
+os.environ.setdefault("NUMBA_CACHE_DIR", str(Path(tempfile.gettempdir()) / "RoboRiffNumbaCache"))
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
@@ -451,7 +451,7 @@ def choose_full_song_source(audio_path: Path) -> Path:
 
 
 class ModernDropdown(tk.Frame):
-    """Small custom dropdown with a consistent dark ChartForge appearance."""
+    """Small custom dropdown with a consistent dark RoboRiff appearance."""
 
     def __init__(self, parent, variable: tk.StringVar, values: tuple[str, ...], width: int = 18):
         super().__init__(parent, bg="#252c38", highlightthickness=1, highlightbackground="#536174", highlightcolor="#36c98f")
@@ -461,7 +461,7 @@ class ModernDropdown(tk.Frame):
 
 
 class ModernToggle(tk.Frame):
-    """Compact on/off control that matches the ChartForge dark UI."""
+    """Compact on/off control that matches the RoboRiff dark UI."""
 
     def __init__(self, parent, variable: tk.BooleanVar, text: str):
         super().__init__(parent, bg="#191e28")
@@ -582,7 +582,7 @@ class ModernToggle(tk.Frame):
 
 
 class ModernDropdownV2(tk.Frame):
-    """Attached dark dropdown rendered inside the main ChartForge window."""
+    """Attached dark dropdown rendered inside the main RoboRiff window."""
 
     def __init__(self, parent, variable: tk.StringVar, values: tuple[str, ...], width: int = 18):
         super().__init__(parent, bg="#252c38", highlightthickness=1, highlightbackground="#536174")
@@ -696,7 +696,7 @@ def build_chart(title: str, artist: str, charter: str, bpm: int, duration: float
     return "\n".join(sections)
 
 
-class ChartForge(tk.Tk):
+class RoboRiff(tk.Tk):
     def __init__(self) -> None:
         super().__init__()
         self.title(APP_NAME)
@@ -718,7 +718,7 @@ class ChartForge(tk.Tk):
         self.art_status = tk.StringVar(value="No artwork selected")
         self.search_query = tk.StringVar()
         self.search_results: list[dict[str, str]] = []
-        self.database_path = Path(__file__).with_name("chartforge.db")
+        self.database_path = Path(__file__).with_name("roboriff.db")
         self.preview_art_path: Path | None = None
         self.search_after_id: str | None = None
         self.art_canvas: tk.Canvas | None = None
@@ -952,7 +952,7 @@ class ChartForge(tk.Tk):
         self.title_value.set(result["title"])
         self.artist.set(result["artist"])
         self._show_art_placeholder()
-        preview_dir = Path(tempfile.gettempdir()) / "ChartForge"
+        preview_dir = Path(tempfile.gettempdir()) / "RoboRiff"
         preview_dir.mkdir(parents=True, exist_ok=True)
         self.preview_art_path = preview_dir / "album_art_preview.jpg"
         try:
@@ -967,7 +967,7 @@ class ChartForge(tk.Tk):
     def fetch_art(self) -> None:
         title = safe_name(self.title_value.get())
         artist = self.artist.get().strip() or "Unknown Artist"
-        preview_dir = Path(tempfile.gettempdir()) / "ChartForge"
+        preview_dir = Path(tempfile.gettempdir()) / "RoboRiff"
         preview_dir.mkdir(parents=True, exist_ok=True)
         preview_path = preview_dir / "album_art_preview.jpg"
         self.art_status.set("Searching…")
@@ -1101,4 +1101,4 @@ class ChartForge(tk.Tk):
 
 
 if __name__ == "__main__":
-    ChartForge().mainloop()
+    RoboRiff().mainloop()

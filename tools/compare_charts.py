@@ -1,4 +1,4 @@
-"""Internal ChartForge chart comparison tool.
+"""Internal RoboRiff chart comparison tool.
 
 Examples:
     py -3.13 tools/compare_charts.py \
@@ -158,7 +158,7 @@ def detailed_match(reference: list[Note], generated: list[Note], tolerance_ms: f
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Compare a reference Clone Hero chart with a ChartForge chart")
+    parser = argparse.ArgumentParser(description="Compare a reference Clone Hero chart with a RoboRiff chart")
     parser.add_argument("reference", type=Path)
     parser.add_argument("generated", type=Path)
     parser.add_argument("--difficulty", default="Expert", choices=("Easy", "Medium", "Hard", "Expert"))
@@ -179,11 +179,11 @@ def main() -> None:
     generated_stats = metrics(generated)
     precision, recall = timing_match(reference, generated)
     lines = [
-        f"ChartForge comparison — {args.difficulty}",
+        f"RoboRiff comparison — {args.difficulty}",
         f"Reference: {args.reference}",
         f"Generated: {args.generated}",
         "",
-        "Metric                 Reference       ChartForge",
+        "Metric                 Reference       RoboRiff",
         f"Notes                  {reference_stats['notes']:>9.0f}       {generated_stats['notes']:>10.0f}",
         f"Chords                 {reference_stats['chords']:>9.0f}       {generated_stats['chords']:>10.0f}",
         f"Sustains               {reference_stats['sustains']:>9.0f}       {generated_stats['sustains']:>10.0f}",

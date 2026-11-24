@@ -1,4 +1,4 @@
-"""Optional Demucs-based source separation for ChartForge."""
+"""Optional Demucs-based source separation for RoboRiff."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from pathlib import Path
 def get_or_create_guitar_stem(audio_path: Path, cache_dir: Path | None = None) -> Path:
     """Return a local guitar stem, creating it with Demucs when needed."""
     # Quality-first cache: separation is expensive, so reuse it on later runs.
-    destination = cache_dir or audio_path.parent / ".chartforge-stems-quality"
+    destination = cache_dir or audio_path.parent / ".roboriff-stems-quality"
     destination.mkdir(parents=True, exist_ok=True)
     model_name = "htdemucs_6s"
     expected = destination / model_name / audio_path.stem / "guitar.wav"

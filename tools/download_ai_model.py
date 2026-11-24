@@ -1,4 +1,4 @@
-"""Download and verify the optional ChartForge AI model."""
+"""Download and verify the optional RoboRiff AI model."""
 
 from __future__ import annotations
 

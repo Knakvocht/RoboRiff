@@ -8,9 +8,9 @@ venv/
 # Local app data and generated charts
 output/
 Voorbeeld/
-chartforge.db
+*.db
 ai_config.json
-.chartforge-*/
+.*-stems-quality/
 vendor/**/__pycache__/
 
 # User audio and artwork

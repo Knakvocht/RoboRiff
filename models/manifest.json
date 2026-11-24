@@ -1,6 +1,6 @@
 {
   "model": {
-    "name": "ChartForge optional guitar separator",
+    "name": "RoboRiff optional guitar separator",
     "version": "0.1.0",
     "directory": "guitar-separator-0.1.0",
     "filename": "model.onnx",

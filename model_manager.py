@@ -1,4 +1,4 @@
-"""Optional local AI model downloader for ChartForge."""
+"""Optional local AI model downloader for RoboRiff."""
 
 from __future__ import annotations
 
@@ -40,9 +40,9 @@ def download_model(manifest: dict, models_dir: Path | None = None, progress=None
 
     root = models_dir or Path(__file__).with_name("models")
     root.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="chartforge-model-") as temp_dir:
+    with tempfile.TemporaryDirectory(prefix="roboriff-model-") as temp_dir:
         archive = Path(temp_dir) / "model.download"
-        request = Request(url, headers={"User-Agent": "ChartForge/0.1"})
+        request = Request(url, headers={"User-Agent": "RoboRiff/0.1"})
         with urlopen(request, timeout=60) as response, archive.open("wb") as output:
             total = int(response.headers.get("Content-Length", "0"))
             downloaded = 0
