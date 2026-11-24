@@ -1,14 +1,14 @@
-# ChartForge
+# RoboRiff
 
-ChartForge is a local AI-assisted Clone Hero chart generator. It analyzes an
+RoboRiff is a local AI-assisted Clone Hero chart generator. It analyzes an
 audio file, detects guitar events, and exports a portable song folder with a
 `notes.chart`, `song.ini`, audio, and album art.
 
 ## Features
 
 - Local Tkinter GUI with English labels
-- Basic Pitch fallback transcription
 - Riley/GAPS guitar-specific transcription mode
+- Basic Pitch fallback transcription
 - Optional Demucs guitar separation
 - Automatic BPM and duration detection
 - Playability-aware five-lane arrangement
@@ -64,5 +64,5 @@ downloaded separately and are not included in this repository.
 
 ## License
 
-ChartForge code is released under the MIT License. See `LICENSE`. Third-party
+RoboRiff code is released under the MIT License. See `LICENSE`. Third-party
 code, models, and assets retain their own licenses.
