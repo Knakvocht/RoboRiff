@@ -47,6 +47,7 @@ except ImportError:
 
 
 APP_NAME = "RoboRiff"
+VERSION = "0.1.0"
 AI_NOTE_CONFIDENCE = 0.35
 AI_ONSET_THRESHOLD = 0.5
 AI_FRAME_THRESHOLD = 0.3
@@ -788,7 +789,7 @@ class RoboRiff(tk.Tk):
         header = ttk.Frame(root)
         header.pack(fill="x", pady=(0, 22))
         ttk.Label(header, text="ROBORIFF", style="Title.TLabel").pack(side="left")
-        ttk.Label(header, text="  AI CHART GENERATOR  /  v0.1", style="Muted.TLabel").pack(side="left", pady=(9, 0))
+        ttk.Label(header, text=f"  AI CHART GENERATOR  /  v{VERSION}", style="Muted.TLabel").pack(side="left", pady=(9, 0))
 
         columns = ttk.Frame(root)
         columns.pack(fill="both", expand=True)

@@ -4,6 +4,8 @@ RoboRiff is a local AI-assisted Clone Hero chart generator. It analyzes an
 audio file, detects guitar events, and exports a portable song folder with a
 `notes.chart`, `song.ini`, audio, and album art.
 
+Current release: **0.1.0**
+
 ## Features
 
 - Local Tkinter GUI with English labels
