@@ -42,11 +42,11 @@ locally. The first guitar analysis can take several minutes on CPU.
 ## Testing against a reference chart
 
 Reference songs and generated output are intentionally excluded from Git. Keep
-them in local `Voorbeeld/` and `output/` folders, then run:
+them in local `Reference/` and `output/` folders, then run:
 
 ```powershell
 py -3.13 tools\compare_charts.py `
-  ".\Voorbeeld\Song Reference" `
+  ".\Reference\Song Reference" `
   ".\output\Generated Song" `
   --difficulty Expert `
   --detailed
