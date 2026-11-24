@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Local app data and generated charts
+output/
+Voorbeeld/
+chartforge.db
+ai_config.json
+.chartforge-*/
+vendor/**/__pycache__/
+
+# User audio and artwork
+*.mp3
+*.ogg
+*.wav
+*.flac
+*.m4a
+album_art.*
+*.mid
+*.chart
+
+# Model caches and local downloads
+models/*.onnx
+models/*.pth
+models/*.bin
+.cache/
+dist/
+build/
+*.spec
+
+# Editors and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

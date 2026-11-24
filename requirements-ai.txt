@@ -1,0 +1,7 @@
+onnxruntime-directml>=1.20
+basic-pitch==0.4.0
+onnxruntime>=1.32
+pretty-midi>=0.2.11
+mir-eval>=0.8
+torchlibrosa>=0.1.0
+huggingface_hub>=0.24
